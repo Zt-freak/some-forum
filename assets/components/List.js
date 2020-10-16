@@ -25,16 +25,20 @@ class List extends React.Component {
 
         for (let i = 0; i < this.state.categories.length; i++) {
             categoriesJSX.push(
-                <div key={this.state.categories[i].id}>
-                    {this.state.categories[i].name}
-                </div>
+                <a href={`/category/${this.state.categories[i].id}`} key={this.state.categories[i].id}>
+                    <div className="category-container">
+                        {this.state.categories[i].name}
+                    </div>
+                </a>
             )
         }
 
         return (
-            <>
+            <div className="category-list">
+                <h1>The Message Board</h1>
+                <p>Select category:</p>
                 {categoriesJSX}
-            </>
+            </div>
         )
     }
 }
